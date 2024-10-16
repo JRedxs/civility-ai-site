@@ -13,8 +13,16 @@ import {
   IconProps,
   useColorModeValue,
 } from '@chakra-ui/react'
-
+import AboutUs from './AboutUs'
+import { useNavigate } from 'react-router-dom'  // Import de useNavigate pour la redirection
 export default function CallToActionWithVideo() {
+  const navigate = useNavigate()  // Hook pour naviguer
+
+  const handleAboutUsClick = () => {
+    navigate('/about')  // Redirige vers la page About Us
+  }
+
+
   return (
     <Container maxW={'7xl'}>
       <Stack
@@ -48,10 +56,9 @@ export default function CallToActionWithVideo() {
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-          Civility AI est conçu pour assainir les réseaux sociaux grâce à une authentification 
-          avancée des utilisateurs et à la modération automatique du texte. En tirant parti des 
-          modèles d’IA améliorés, il détecte le contenu préjudiciable et haineux en temps réel, 
-          créant ainsi des communautés en ligne plus sécuritaires.
+          Civility AI is designed to clean up social networks through advanced user authentication and 
+          automatic text moderation. By leveraging enhanced AI models, it detects harmful and hateful 
+          content in real time, creating safer online communities.
           </Text>
           <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
             <Button
@@ -61,8 +68,10 @@ export default function CallToActionWithVideo() {
               px={6}
               colorScheme={'#40BFBC'}
               bg={'#40BFBC'}
-              _hover={{ bg: '#40BFBC' }}>
-              Get started
+              _hover={{ bg: '#40BFBC' }}
+              onClick={handleAboutUsClick}
+              >
+              About Us
             </Button>
             <Button
               rounded={'full'}
