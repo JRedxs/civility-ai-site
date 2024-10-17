@@ -4,6 +4,7 @@ import { ChakraProvider, Flex, Box } from '@chakra-ui/react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from './App';  // Votre composant principal
 import AboutUs from './AboutUs';  // Import du composant About Us
+import Pricing from './Pricing'
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -23,6 +24,7 @@ root.render(
             <Routes>
               <Route path="/" element={<App />} />  
               <Route path="/about" element={<AboutUs />} />  {/* La page About Us */}
+              <Route path='/pricing' element={<Pricing />} />
             </Routes>
           </Box>
           
